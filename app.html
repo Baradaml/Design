@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Tooltip Example</title>
+  <style>
+    .tooltip-container {
+      position: relative;
+      display: inline-block;
+      margin: 100px;
+    }
+
+    .tooltip-text {
+      visibility: hidden;
+      width: 160px;
+      background-color: #333;
+      color: #fff;
+      text-align: center;
+      padding: 6px;
+      border-radius: 4px;
+
+      position: absolute;
+      bottom: 125%; /* position above the element */
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1;
+
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+
+    .tooltip-container:hover .tooltip-text {
+      visibility: visible;
+      opacity: 1;
+    }
+
+    .tooltip-button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="tooltip-container">
+    <button class="tooltip-button">Hover over me</button>
+    <div class="tooltip-text">This is a custom tooltip!</div>
+  </div>
+</body>
+</html>
